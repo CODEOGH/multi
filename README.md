@@ -62,7 +62,7 @@ This host layout is built on a high-fidelity **Retro-Gaming & Synthwave** aesthe
 1. Turn on your PS4 and connect to your network.
 2. Open the **Internet Browser**, press **Options**, go to **Settings**.
 3. Select **Delete Cookies** and **Clear Website Data**.
-4. Type your host URL into the address bar and press **Go**.
+4. Type the URL [https://codeogh.github.io/multi] into the address bar and press **Go**.
 5. The host will automatically identify your firmware and start installing the offline cache.
 6. Once the cache is successfully installed, the host will automatically refresh the screen and launch GoldHEN.
 7. You can now disconnect your PS4 from the internet and re-open the browser anytime to trigger the exploit completely offline.
