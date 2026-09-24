@@ -11,7 +11,9 @@
 var uaFull = navigator.userAgent;
 var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
 var isPS4 = match !== null;
-var fwVersion = isPS4 ? match : "Unknown";
+
+// EXTRACTION STRICTE : match[1] extrait uniquement le numéro de version (ex: 13.52)
+var fwVersion = isPS4 ? match[1] : "Unknown"; 
 var fwNum = parseFloat(fwVersion);
 
 function onScriptError() {
@@ -96,23 +98,30 @@ if (!isPS4) {
 }
 </script>
 
-<!-- Zones d'affichage plein écran pour l'état du Jailbreak -->
 <div id="status-success" class="full-screen-status"></div>
 <div id="status-failed" class="full-screen-status"></div>
 
-<!-- Conteneur principal de l'interface graphique -->
 <div id="main-container">
     <div>
         <h1>PS4 7.00---13.52 FW GOLDHEN BY OGH</h1>
         <hr>
     </div>
     
-    <h1 id="msgs">LOADING GOLDHEN V2.4B18.12... PLEASE WAIT</h1>
+    <h1 id="msgs" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">LOADING GOLDHEN V2.4B18.12... PLEASE WAIT</h1>
 
-    <h1 class="thanks">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
+    <!-- Bloc QR Code épuré -->
+    <div id="qr-container">
+        <div class="qr-box">
+            <div class="qr-image"></div>
+            <p>THANKS FOR YOUR SUPPORT ❤️</p>
+        </div>
+    </div>
+
+    <div class="thanks-container">
+        <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
+    </div>
 </div>
 
-<!-- Script d'écoute automatique des états Success / Failed -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     var targetNode = document.getElementById('msgs');
@@ -121,14 +130,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             var text = targetNode.innerText.toUpperCase();
-            
-            // Détection du Succès (GoldHEN chargé avec succès)
             if (text.includes("SUCCESS") || text.includes("DONE") || text.includes("LAUNCHED") || text.includes("LOADED")) {
                 document.getElementById("main-container").style.display = "none";
                 document.getElementById("status-success").style.display = "block";
                 observer.disconnect();
             }
-            // Détection de l'Échec / Erreur
             else if (text.includes("FAILED") || text.includes("ERROR") || text.includes("NOT FOUND")) {
                 document.getElementById("main-container").style.display = "none";
                 document.getElementById("status-failed").style.display = "block";
@@ -136,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-
     observer.observe(targetNode, { characterData: true, childList: true, subtree: true });
 });
 </script>

@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html manifest="slopkit.manifest">
 <head>
+<meta charset="utf-8">
 <title>PS4 7.00---13.52 fw GoldHen By OGH</title>
+<!-- Lien unique vers le fichier CSS localisé à la racine -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <script>
 history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
-function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
-function DisplayCacheProgress(){window.msgs.innerHTML="Cache Installed Successfully ✔";setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},1500);}
+
+function DLProgress(e){
+    Percent=(Math.round(e.loaded / e.total * 100));
+    window.msgs.innerHTML="INSTALLING OFFLINE CACHE: " + Percent + "%";
+}
+
+// FONCTION MODIFIÉE : Automatisation du lancement après la mise en cache
+function DisplayCacheProgress(){
+    window.msgs.innerHTML="CACHE INSTALLED SUCCESSFULLY ✔";
+    setTimeout(function(){
+        window.msgs.innerHTML="LAUNCHING GOLDHEN... PLEASE WAIT";
+        setTimeout(function(){
+            window.location.reload(); // Recharge la page automatiquement pour lancer l'exploit
+        }, 1000);
+    }, 1500);
+}
+
 window.applicationCache.addEventListener("progress",DLProgress,false);
 window.applicationCache.oncached=function(e){DisplayCacheProgress();};
 window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-window.applicationCache.onerror=function(e){window.msgs.innerHTML="Error Installing Cache! - Clear and Re-Open Your Browser ...";};
+window.applicationCache.onerror=function(e){window.msgs.innerHTML="ERROR INSTALLING CACHE! - CLEAR AND RE-OPEN YOUR BROWSER ...";};
 </script>
-<h1>PS4 7.00---13.52 fw GoldHen By OGH</h1>
-<hr>
-<br>
-<h1 id=msgs style="font-size: 30px;margin-top: 77px;margin-bottom: 455px;">Starting Cache Installation...</h1>
-<h1 class="thanks">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
+
+<div id="main-container">
+    <div>
+        <h1>PS4 7.00---13.52 FW<br>GOLDHEN BY OGH</h1>
+        <hr>
+    </div>
+    
+    <!-- Ligne de statut principale -->
+    <h1 id="msgs" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">STARTING CACHE INSTALLATION...</h1>
+
+    <!-- Bloc QR Code commun affiché sur toutes les pages -->
+    <div id="qr-container">
+        <div class="qr-box">
+            <div class="qr-image"></div>
+            <p>THANKS FOR YOUR SUPPORT ❤️</p>
+        </div>
+    </div>
+
+    <!-- Section de remerciements maintenue tout en bas -->
+    <div class="thanks-container">
+        <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
+    </div>
+</div>
 </body>
 </html>

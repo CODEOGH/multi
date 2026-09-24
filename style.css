@@ -7,7 +7,7 @@
 }
 
 html {
-    background-image: url('background.jpg'); 
+    background-image: url('background.jpg'); /* VOTRE FOND PLEIN ÉCRAN EST MAINTENU ICI */
     background-position: center;
     background-size: 100% 100%; 
     background-attachment: fixed;
@@ -34,7 +34,6 @@ hr {
     margin: 30px auto;
     width: 85%;
     border-radius: 4px;
-    /* Effet d'éclat lumineux intense */
     box-shadow: 0 0 4px #ff5500, 
                 0 0 10px #ff7700, 
                 0 0 20px #ff7700, 
@@ -47,27 +46,11 @@ a {
     animation: neonPulse 2.5s infinite ease-in-out;
 }
 
-#progress {
+#progress, #menu {
     display: block;
 }
 
-#menu {
-    display: block;
-}
-
-#crypto {
-    display: none;
-}
-
-#tools {
-    display: none;
-}
-
-#lnx {
-    display: none;
-}
-
-#mods {
+#crypto, #tools, #lnx, #mods {
     display: none;
 }
 
@@ -133,7 +116,69 @@ a {
     box-shadow: 0 0 15px #ffd700, 0 0 25px #b8860b;
 }
 
-/* Animations Néon */
+/* ==========================================================================
+   ZONE COMMUNE QR CODE & REMERCIEMENTS (TOUTES PAGES)
+   ========================================================================== */
+
+/* Positionnement fixe du QR Code au milieu de l'espace noir vide */
+#qr-container {
+    position: fixed;
+    bottom: 22vh; /* Position abaissée de 24vh à 22vh pour équilibrer sa plus grande taille */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Positionnement de la section de remerciements tout en bas de l'écran */
+.thanks-container {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+}
+
+/* Boîte néon style arcade pour le QR Code (Agrandie) */
+.qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 16px; /* Augmenté de 12px à 16px */
+    border: 4px solid #ff6600; /* Épaisseur augmentée à 4px */
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff6600; /* Lueur plus intense */
+}
+
+/* Bloc d'affichage de l'image du QR Code uniquement (Agrandie) */
+.qr-image {
+    display: block;
+    width: 160px; /* Augmenté de 12px à 160px */
+    height: 160px; /* Augmenté de 12px à 160px */
+    border-radius: 6px;
+    background-image: url('qrcode.png'); /* Chargement de votre QR Code */
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff; 
+}
+
+/* Texte amical sous le QR Code (Plus grand et lisible) */
+.qr-box p {
+    font-size: 10px; /* Augmenté de 8px à 10px pour être bien visible */
+    color: #ffffff;
+    margin-top: 12px; /* Espacement ajusté */
+    margin-bottom: 0;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 5px #ff6600;
+}
+
+/* ==========================================================================
+   ANIMATIONS & ÉCRANS DE STATUT FINAUX
+   ========================================================================== */
+
 @keyframes neonPulse {
     0%, 100% {
         text-shadow: 0 0 7px #ff6600, 0 0 15px #ff6600, 0 0 25px #ff6600;
@@ -152,9 +197,8 @@ a {
     }
 }
 
-/* Styles pour l'affichage plein écran des images success / failed */
 .full-screen-status {
-    display: none; /* Masqué par défaut */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -177,7 +221,6 @@ a {
     background-repeat: no-repeat;
 }
 
-/* Ajustement pour s'assurer que le conteneur principal utilise flexbox correctement */
 #main-container {
     display: flex;
     flex-direction: column;

@@ -2,6 +2,8 @@
 
 A custom, high-performance, and **100% offline-ready** GoldHEN exploit host for PlayStation 4 consoles running firmwares from **7.00 to 13.52**. This host features a premium Retro-Gaming Pixel Art design with animated orange neon glows, a custom full-screen background, and automated success/failure visual screens.
 
+🌐 **Live Host URL:** [https://codeogh.github.io/multi]
+
 ---
 
 ## 🌟 Features
@@ -10,7 +12,7 @@ A custom, high-performance, and **100% offline-ready** GoldHEN exploit host for 
 * **100% Offline Cache:** Fully autonomous application cache manifests allowing you to run the exploit anytime without an internet connection.
 * **Retro-Gaming Aesthetics:** Integrated local arcade-style pixel font (`Press Start 2P`) requiring zero internet access to load.
 * **Dynamic Neon Visuals:** CSS-animated pulsing headers, custom glow separation lines, and blinking text elements.
-* **Live Progress Bar:** High-visibility neon orange progress bar showcasing the real-time installation percentage of your offline cache.
+* **Fully Automated Flow:** Transparent cache installation that automatically triggers a page reload and launches GoldHEN without requiring the user to close or re-open the browser.
 * **Smart Event Screens:** Automated system using a JavaScript observer to display full-screen `success.jpg` or `failed.jpg` graphics depending on the jailbreak outcome.
 
 ---
@@ -25,6 +27,7 @@ Ensure your root directory matches the layout below:
 ├── background.jpg               # Your custom menu background graphic
 ├── success.jpg                  # Full-screen graphic displayed on exploit success
 ├── failed.jpg                   # Full-screen graphic displayed on exploit failure
+├── qrcode.png                   # Custom QR Code for donations and support
 ├── PressStart2P-Regular.ttf     # Local arcade font file (required for offline styling)
 ├── goldhen_2.4b18.12.bin        # GoldHEN payload binary
 ├── 505.manifest                 # AppCache manifest files per firmware range
@@ -45,9 +48,10 @@ Ensure your root directory matches the layout below:
 
 This host layout is built on a high-fidelity **Retro-Gaming & Synthwave** aesthetic crafted specifically for TV displays:
 
-* **Typography:** Powered by the pixelated `Press Start 2P` font, scaled globally at a strict `22px` height to align perfectly with vintage arcade standards and television safe-zones.
+* **Typography:** Powered by the pixelated `Press Start 2P` font, scaled globally at a strict height to align perfectly with vintage arcade standards and television safe-zones.
 * **Color Palette:** Dominated by a deep electric orange (`#ff7700`) paired with an immersive dark backdrop (`background.jpg`) depicting futuristic neon geometric contours.
 * **Animated Glow Effects:** Integrated CSS keyframe animations provide a slow, rhythmic pulsation (`neonPulse`) on texts and horizontal bars, mimicking authentic glowing gas-discharge neon tubes.
+* **Support QR Box:** Displays a high-visibility, 160px custom donation QR Code (`qrcode.png`) enclosed within an arcade neon border, completed by a glowing retro text note underneath.
 * **Interactive Elements:** Features structured, translucent navigation buttons utilizing high-intensity neon borders that brightly invert into full solid block color styles upon joystick selection.
 
 ---
@@ -59,8 +63,9 @@ This host layout is built on a high-fidelity **Retro-Gaming & Synthwave** aesthe
 2. Open the **Internet Browser**, press **Options**, go to **Settings**.
 3. Select **Delete Cookies** and **Clear Website Data**.
 4. Type your host URL into the address bar and press **Go**.
-5. The host will automatically identify your firmware and start installing the offline cache with the custom progress bar.
-6. Once the message says `CACHE INSTALLED SUCCESSFULLY ✔`, close the browser, disconnect your PS4 from the internet, and re-open the browser to trigger the exploit completely offline.
+5. The host will automatically identify your firmware and start installing the offline cache.
+6. Once the cache is successfully installed, the host will automatically refresh the screen and launch GoldHEN.
+7. You can now disconnect your PS4 from the internet and re-open the browser anytime to trigger the exploit completely offline.
 
 ---
 
@@ -71,6 +76,7 @@ background.jpg
 style.css
 success.jpg
 failed.jpg
+qrcode.png
 ```
 
 ---
