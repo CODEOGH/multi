@@ -1,0 +1,188 @@
+/* Chargement de la police rétro en local (Hors-ligne) */
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    background-image: url('background.jpg'); 
+    background-position: center;
+    background-size: 100% 100%; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    color: rgb(236, 81, 10);
+    text-align: center;
+    overflow: hidden;
+    font-family: 'Press Start 2P', monospace; 
+}
+
+h1 {
+    font-size: 30px; 
+    color: rgb(255, 255, 255);
+    line-height: 1.8;
+    animation: neonPulse 2.5s infinite ease-in-out; 
+}
+
+/* Style de la ligne horizontale (HR) style Néon Orange Lumineux */
+hr {
+    border: 0;
+    height: 6px;
+    background: #ff7700;
+    margin: 30px auto;
+    width: 85%;
+    border-radius: 4px;
+    /* Effet d'éclat lumineux intense */
+    box-shadow: 0 0 4px #ff5500, 
+                0 0 10px #ff7700, 
+                0 0 20px #ff7700, 
+                0 0 40px #ff4500;
+    animation: borderPulse 2.5s infinite ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    animation: neonPulse 2.5s infinite ease-in-out;
+}
+
+#progress {
+    display: block;
+}
+
+#menu {
+    display: block;
+}
+
+#crypto {
+    display: none;
+}
+
+#tools {
+    display: none;
+}
+
+#lnx {
+    display: none;
+}
+
+#mods {
+    display: none;
+}
+
+.btn {
+    background-color: #1a0a00; 
+    color: white;
+    width: 227px;
+    height: 46px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 14px; 
+    font-family: 'Press Start 2P', monospace;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 2px solid #ff6600; 
+    box-shadow: 0 0 5px #ff6600;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #ff6600;
+    color: #000;
+    box-shadow: 0 0 15px #ff6600, 0 0 25px #ff4500; 
+}
+
+.btn-onln {
+    border-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    background-color: #051a05;
+}
+
+.btn-onln:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #18891b;
+}
+
+.btn-toolbox {
+    border-color: #ff0000;
+    box-shadow: 0 0 5px #ff0000;
+    background-color: #1a0505;
+}
+
+.btn-toolbox:hover {
+    background-color: #ff0000;
+    color: #000;
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ae2301;
+}
+
+.btn-multi {
+    border-color: #ffd700;
+    box-shadow: 0 0 5px #ffd700;
+    background-color: #1a1a05;
+}
+
+.btn-multi:hover {
+    background-color: #ffd700;
+    color: #000;
+    box-shadow: 0 0 15px #ffd700, 0 0 25px #b8860b;
+}
+
+/* Animations Néon */
+@keyframes neonPulse {
+    0%, 100% {
+        text-shadow: 0 0 7px #ff6600, 0 0 15px #ff6600, 0 0 25px #ff6600;
+    }
+    50% {
+        text-shadow: 0 0 12px #ff6600, 0 0 25px #ff6600, 0 0 40px #ff6600, 0 0 55px #ff4500;
+    }
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        box-shadow: 0 0 4px #ff5500, 0 0 10px #ff7700, 0 0 20px #ff7700, 0 0 40px #ff4500;
+    }
+    50% {
+        box-shadow: 0 0 6px #ff4500, 0 0 15px #ff8800, 0 0 30px #ff8800, 0 0 55px #ff3300;
+    }
+}
+
+/* Styles pour l'affichage plein écran des images success / failed */
+.full-screen-status {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#status-success {
+    background-image: url('success.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#status-failed {
+    background-image: url('failed.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Ajustement pour s'assurer que le conteneur principal utilise flexbox correctement */
+#main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 50px 30px;
+}
