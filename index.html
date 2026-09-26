@@ -12,7 +12,7 @@ var uaFull = navigator.userAgent;
 var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
 var isPS4 = match !== null;
 
-// EXTRACTION STRICTE : match[1] extrait uniquement le numéro de version (ex: 13.52)
+/* Extraction stable du numéro de firmware au format numérique (ex: 13.52) */
 var fwVersion = isPS4 ? match[1] : "Unknown"; 
 var fwNum = parseFloat(fwVersion);
 
@@ -90,7 +90,7 @@ if (!isPS4) {
         else if (fwNum >= 13.02 && fwNum <= 13.52) {
             var script = document.createElement('script');
             script.type = 'module';
-            script.src = "slopkit/jb.js?v=10";
+            script.src = "slopkit/jb.js?v=19";
             script.onerror = onScriptError;
             document.head.appendChild(script);
         }
@@ -109,14 +109,15 @@ if (!isPS4) {
     
     <h1 id="msgs" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">LOADING GOLDHEN V2.4B18.12... PLEASE WAIT</h1>
 
-    <!-- Bloc QR Code épuré -->
+    <!-- Bloc QR Code avec cœur rétro compatible PS4 Browser (&#9829;) -->
     <div id="qr-container">
         <div class="qr-box">
-            <div class="qr-image"></div>
-            <p>THANKS FOR YOUR SUPPORT ❤️</p>
+            <img src="qrcode.png" class="qr-image" alt="PayPal QR Code">
+            <p>THANKS FOR YOUR SUPPORT <span style="color: #ff3333; font-size: 12px; text-shadow: 0 0 5px #ff0000;">&#9829;</span></p>
         </div>
     </div>
 
+    <!-- Section exclusive de remerciements ancrée tout en bas -->
     <div class="thanks-container">
         <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
     </div>
