@@ -2,16 +2,18 @@
 <html manifest="slopkit.manifest">
 <head>
 <meta charset="utf-8">
-<title>PS4 7.00---13.52 fw GoldHen By OGH</title>
-<!-- Lien unique vers le fichier CSS localisé à la racine -->
+<title>PS4 7.00---14.00 fw GoldHen By OGH</title>
+<!-- Lien direct vers le fichier CSS localisé à la racine -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <script>
-history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+history.replaceState(null, null, 'index.html');
+var histlength = history.length;
+history.go(-histlength);
 
 function DLProgress(e){
-    Percent=(Math.round(e.loaded / e.total * 100));
+    Percent = (Math.round(e.loaded / e.total * 100));
     window.msgs.innerHTML = "INSTALLING OFFLINE CACHE: " + Percent + "%";
 }
 
@@ -26,15 +28,17 @@ function DisplayCacheProgress(){
     }, 1500);
 }
 
-window.applicationCache.addEventListener("progress",DLProgress,false);
-window.applicationCache.oncached=function(e){DisplayCacheProgress();};
-window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-window.applicationCache.onerror=function(e){window.msgs.innerHTML="ERROR INSTALLING CACHE! - CLEAR AND RE-OPEN YOUR BROWSER ...";};
+window.applicationCache.addEventListener("progress", DLProgress, false);
+window.applicationCache.oncached = function(e){ DisplayCacheProgress(); };
+window.applicationCache.onupdateready = function(e){ DisplayCacheProgress(); };
+window.applicationCache.onerror = function(e){ 
+    window.msgs.innerHTML = "ERROR INSTALLING CACHE! - CLEAR AND RE-OPEN YOUR BROWSER ..."; 
+};
 </script>
 
 <div id="main-container">
     <div>
-        <h1>PS4 7.00---13.52 FW GOLDHEN BY OGH</h1>
+        <h1>PS4 7.00---14.00 FW GOLDHEN BY OGH</h1>
         <hr>
     </div>
     
@@ -51,7 +55,7 @@ window.applicationCache.onerror=function(e){window.msgs.innerHTML="ERROR INSTALL
 
     <!-- Section exclusive de remerciements ancrée en bas -->
     <div class="thanks-container">
-        <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTR0o</span></h1>
+        <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
     </div>
 </div>
 </body>

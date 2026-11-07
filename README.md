@@ -1,6 +1,6 @@
-# PS4 GoldHEN Host [7.00 - 13.52] by OGH
+# PS4 GoldHEN Host [7.00 - 14.00] by OGH
 
-A custom, high-performance, and **100% offline-ready** GoldHEN exploit host for PlayStation 4 consoles running firmwares from **7.00 to 13.52**. This host features a premium Retro-Gaming Pixel Art design with animated orange neon glows, a custom full-screen background, and automated success/failure visual screens.
+A custom, high-performance, and **100% offline-ready** GoldHEN exploit host for PlayStation 4 consoles running firmwares from **5.05** and **7.00 to 14.00**. This host features a premium Retro-Gaming Pixel Art design with animated orange neon glows, a custom full-screen background, and automated success/failure visual screens.
 
 🌐 **Live Host URL:** [https://codeogh.github.io/multi]
 
@@ -8,12 +8,13 @@ A custom, high-performance, and **100% offline-ready** GoldHEN exploit host for 
 
 ## 🌟 Features
 
-* **Firmware Support:** Multi-firmware targeting (7.00 up to 13.52) with automatic firmware detection and redirection.
+* **Firmware Support:** Multi-firmware targeting (7.00 up to 14.00) with automatic firmware detection and redirection.
 * **100% Offline Cache:** Fully autonomous application cache manifests allowing you to run the exploit anytime without an internet connection.
 * **Retro-Gaming Aesthetics:** Integrated local arcade-style pixel font (`Press Start 2P`) requiring zero internet access to load.
 * **Dynamic Neon Visuals:** CSS-animated pulsing headers, custom glow separation lines, and blinking text elements.
 * **Fully Automated Flow:** Transparent cache installation that automatically triggers a page reload and launches GoldHEN without requiring the user to close or re-open the browser.
 * **Smart Event Screens:** Automated system using a JavaScript observer to display full-screen `success.jpg` or `failed.jpg` graphics depending on the jailbreak outcome.
+* **PSFree Integration:** Leveraging ultra-stable WebKit exploitation via *PSFree* for modern firmwares, significantly reducing kernel panics.
 
 ---
 
@@ -29,17 +30,37 @@ Ensure your root directory matches the layout below:
 ├── failed.jpg                   # Full-screen graphic displayed on exploit failure
 ├── qrcode.png                   # Custom QR Code for donations and support
 ├── PressStart2P-Regular.ttf     # Local arcade font file (required for offline styling)
-├── goldhen_2.4b18.12.bin        # GoldHEN payload binary
+├── goldhen_2.4b18.13.bin        # GoldHEN payload binary (v2.4b18.13 payload)
 ├── 505.manifest                 # AppCache manifest files per firmware range
 ├── 700.manifest
 ├── 900.manifest
 ├── css.manifest
-├── slopkit.manifest
+├── slopkit.manifest             # AppCache manifest for modern firmwares
 ├── cache505.html                # Firmware specific cache installer pages
 ├── cache700.html
 ├── cache900.html
 ├── cachecss.html
-└── cacheslopkit.html            # Main installer page for newer firmwares
+├── cacheslopkit.html            # Main installer page for newer firmwares
+└── slopkit/                     # Exploit logic folder for firmwares 11.50 to 14.00
+     ├── afterglow.js
+     ├── chain_lapse.js
+     ├── chain_poops.js
+     ├── core.js
+     ├── int64.js
+     ├── jb.js
+     ├── jb2.js
+     ├── mem.js
+     ├── ps4_offsets.js
+     ├── rpc_worker.js
+     └── patches/
+          ├── 1150.bin
+          ├── 1200.bin
+          ├── 1250.bin
+          ├── 1300.bin
+          ├── 1302.bin
+          ├── 1350.bin
+          ├── 1352.bin
+          └── 1400.bin
 ```
 
 ---
@@ -77,6 +98,7 @@ style.css
 success.jpg
 failed.jpg
 qrcode.png
+goldhen_2.4b18.13.bin
 ```
 
 ---

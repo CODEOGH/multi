@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>PS4 7.00---13.52 fw GoldHen By OGH</title>
+<title>PS4 7.00---14.00 fw GoldHen By OGH</title>
 <!-- Lien unique vers le fichier CSS localisé à la racine -->
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +12,7 @@ var uaFull = navigator.userAgent;
 var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
 var isPS4 = match !== null;
 
-/* Extraction stable du numéro de firmware au format numérique (ex: 13.52) */
+// EXTRACTION STRICTE : match extrait uniquement le numéro de version (ex: 13.52)
 var fwVersion = isPS4 ? match[1] : "Unknown"; 
 var fwNum = parseFloat(fwVersion);
 
@@ -22,7 +22,7 @@ function onScriptError() {
 
 if (!isPS4) {
     document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("msgs").innerHTML = "ONLY FOR PS4 WITH FIRMWARE 7.00 TO 13.52";
+        document.getElementById("msgs").innerHTML = "ONLY FOR PS4 WITH FIRMWARE 7.00 TO 14.00";
     });
 } else {
     if (window.applicationCache.status == '0') {
@@ -34,7 +34,7 @@ if (!isPS4) {
             window.location.replace("cache900.html");
         } else if (fwNum >= 10.00 && fwNum <= 11.02) {
             window.location.replace("cachecss.html");
-        } else if (fwNum >= 11.50 && fwNum <= 13.52) {
+        } else if (fwNum >= 11.50 && fwNum <= 14.00) {
             window.location.replace("cacheslopkit.html");
         } else {
             document.addEventListener("DOMContentLoaded", () => {
@@ -94,6 +94,13 @@ if (!isPS4) {
             script.onerror = onScriptError;
             document.head.appendChild(script);
         }
+        else if (fwNum == 14.00) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "slopkit/jb2.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
     }
 }
 </script>
@@ -103,21 +110,20 @@ if (!isPS4) {
 
 <div id="main-container">
     <div>
-        <h1>PS4 7.00---13.52 FW GOLDHEN BY OGH</h1>
+        <h1>PS4 7.00---14.00 FW GOLDHEN BY OGH</h1>
         <hr>
     </div>
     
-    <h1 id="msgs" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">LOADING GOLDHEN V2.4B18.12... PLEASE WAIT</h1>
+    <h1 id="msgs" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">LOADING GOLDHEN V2.4B18.13... PLEASE WAIT</h1>
 
-    <!-- Bloc QR Code avec cœur rétro compatible PS4 Browser (&#9829;) -->
+    <!-- Bloc QR Code épuré -->
     <div id="qr-container">
         <div class="qr-box">
-            <img src="qrcode.png" class="qr-image" alt="PayPal QR Code">
-            <p>THANKS FOR YOUR SUPPORT <span style="color: #ff3333; font-size: 12px; text-shadow: 0 0 5px #ff0000;">&#9829;</span></p>
+            <div class="qr-image"></div>
+            <p>THANKS FOR YOUR SUPPORT ❤️</p>
         </div>
     </div>
 
-    <!-- Section exclusive de remerciements ancrée tout en bas -->
     <div class="thanks-container">
         <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTRo</span></h1>
     </div>
